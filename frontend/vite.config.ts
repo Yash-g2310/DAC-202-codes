@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/DAC-202-codes/frontend/',
+  base: '/DAC-202-codes/',
   plugins: [
     react(),
     tailwindcss(),
