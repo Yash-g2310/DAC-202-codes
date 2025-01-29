@@ -3,7 +3,7 @@ import 'mathquill/build/mathquill.css'
 import { addStyles, EditableMathField } from 'react-mathquill'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://dac-202-codes.onrender.com';
 
 addStyles()
 
