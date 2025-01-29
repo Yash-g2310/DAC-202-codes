@@ -24,12 +24,13 @@ const App: React.FC = () => {
   })
   const [showModal, setShowModal] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data: ", formData);
-    try{
-      const response = await axios.post('/gradient_descent', formData,{
+    try {
+      const response = await axios.post('/gradient_descent', formData, {
         responseType: 'blob'
       });
       const imgUrl = URL.createObjectURL(new Blob([response.data]));
@@ -38,6 +39,9 @@ const App: React.FC = () => {
       console.log("Response: ", response.data);
     } catch (error) {
       console.error("Error: ", error);
+      setErrorMessage("An error occurred while generating the gradient descent plot. Please try again.");
+      setShowModal(true);
+
     }
   }
 
@@ -138,23 +142,27 @@ const App: React.FC = () => {
       </div>
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          
+
           <div className="bg-white rounded-lg p-6 max-w-2xl w-full">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-xl font-semibold">Gradient Descent Plot</h3>
-              <button 
+              <button
                 onClick={() => setShowModal(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
                 ✕
               </button>
             </div>
-            {imageUrl && (
-              <img 
-                src={imageUrl} 
-                alt="Gradient Descent Plot" 
-                className="w-full h-auto"
-              />
+            {errorMessage ? (
+              <p className="text-red-500">{errorMessage}</p>
+            ) : (
+              imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt="Gradient Descent Plot"
+                  className="w-full h-auto"
+                />
+              )
             )}
           </div>
         </div>
