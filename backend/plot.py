@@ -15,8 +15,8 @@ def generate_gradinet_descent_plot(equation, learning_rate, x0, y0):
         grad = sp.Matrix([sp.diff(eq, x_sym), sp.diff(eq, y_sym)])
         grad_f = sp.lambdify((x_sym, y_sym), grad, 'numpy')
 
-        x = np.linspace(-3, 3, 100)
-        y = np.linspace(-3, 3, 100)
+        x = np.linspace(-3 -x0, 3 + x0, 100)
+        y = np.linspace(-3 -y0, 3 + y0, 100)
         X,Y = np.meshgrid(x, y)
         Z = f(X, Y)
 
