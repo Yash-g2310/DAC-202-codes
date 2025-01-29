@@ -14,7 +14,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173","https://yash-g2310.github.io"], 
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173","https://yash-g2310.github.io/DAC-202-codes"], 
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
