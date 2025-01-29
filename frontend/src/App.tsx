@@ -17,7 +17,7 @@ interface FormData {
 
 const App: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    equation: "\\left(x^2 + 2xy + 2y^2 + x\\right)",
+    equation: "\\left(x^2+2xy+2y^2+x\\right)",
     x0: 0.5,
     y0: 0.5,
     learningRate: 0.1
