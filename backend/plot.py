@@ -5,12 +5,12 @@ import sympy as sp
 import re
 from io import BytesIO
 
+plt.switch_backend('Agg')
 
 def generate_gradinet_descent_plot(equation, learning_rate, x0, y0):
     try:
         x_sym, y_sym = sp.symbols('x y')
         equation = re.sub(r'\\ ', '', equation)
-        equation = re.sub(r'\\', '', equation)
         eq = parse_latex(equation)
         f = sp.lambdify((x_sym, y_sym), eq, 'numpy')
 
