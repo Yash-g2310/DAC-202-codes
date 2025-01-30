@@ -94,7 +94,7 @@ const App: React.FC = () => {
                         ...formData,
                         x0: parseFloat(e.target.value)
                       })}
-                      className=" max-w-24 text-center focus:outline-none bg-gray-50 p-16 rounded-lg border border-gray-200"
+                      className=" max-w-24 text-center focus:outline-none bg-gray-50 rounded-lg border border-gray-200"
                     />
 
                   </div>
@@ -109,7 +109,7 @@ const App: React.FC = () => {
                         ...formData,
                         y0: parseFloat(e.target.value)
                       })}
-                      className=" max-w-24 text-center focus:outline-none bg-gray-50 p-16 rounded-lg border border-gray-200"
+                      className=" max-w-24 text-center focus:outline-none bg-gray-50 rounded-lg border border-gray-200"
                     />
                   </div>
                 </div>
@@ -133,7 +133,7 @@ const App: React.FC = () => {
                       ...formData,
                       learningRate: parseFloat(e.target.value)
                     })}
-                    className=" max-w-24 text-center focus:outline-none bg-gray-50 p-16 rounded-lg border border-gray-200"
+                    className=" max-w-24 text-center focus:outline-none bg-gray-50 rounded-lg border border-gray-200"
                   />
                 </div>
               </div>
