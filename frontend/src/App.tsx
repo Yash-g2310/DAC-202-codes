@@ -35,11 +35,13 @@ const App: React.FC = () => {
       });
       const imgUrl = URL.createObjectURL(new Blob([response.data]));
       setImageUrl(imgUrl);
+      setErrorMessage(null)
       setShowModal(true);
       console.log("Response: ", response.data);
     } catch (error) {
       console.error("Error: ", error);
       setErrorMessage("An error occurred while generating the gradient descent plot. Please try again.");
+      setImageUrl(null)
       setShowModal(true);
 
     }
